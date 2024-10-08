@@ -23,14 +23,59 @@ const game = ()=> {
 
         options.forEach((option)=>{
             option.addEventListener('click', function(){
-                //computer generated choice
+            //computer generated choice
             const computerNumber = Math.floor(Math.random() * 3) ; 
             const computerChoice = computerOptions[computerNumber] ;
-            console.log(computerChoice) ;
+            //This is where we call compare hands
+
+
+            //Update Images
+            playerHand.src = `./assets/${this.textContent}.png` ;
+            computerHand.src = `./assets/${computerChoice}.png` ;
             }) ;
         }) ;
 
-    }
+    } ;
+
+    const compareHands = (playerChoice, computerChoice) =>{
+        //Update Text
+        const winner = document.querySelector('.winner') ;
+        //checking for a tie or draw
+        if(playerChoice === computerChoice){
+            winner.textContent = 'Whoa! A tie!' ;
+            return;
+        }
+        //checking for rock
+        if(playerChoice === 'rock'){
+            if(computerChoice === 'scissors'){
+                winner.textContent = 'You Win!' ;
+                return ;
+            }else{
+                winner.textContent = 'Computer Wins!' ;
+                return ;
+            }
+        }
+        //checking for paper
+        if(playerChoice === 'paper'){
+            if(computerChoice === 'scissors'){
+                winner.textContent = 'Computer Wins!' ;
+                return ;
+            }else{
+                winner.textContent = 'You Win!' ;
+                return ;
+            }
+        }
+        //checking for scissors
+        if(playerChoice === 'scissors'){
+            if(computerChoice === 'rock'){
+                winner.textContent = 'Computer Wins!' ;
+                return ;
+            }else{
+                winner.textContent = 'You Win!' ;
+                return ;
+            }
+        }
+    } ;
 
 
     //call out all inner functions
