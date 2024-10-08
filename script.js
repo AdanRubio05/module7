@@ -28,8 +28,8 @@ const game = ()=> {
         //computer options
         const computerOptions = ['rock', 'paper', 'scissors'] ;
 
-        options.forEach((option)=>{
-            option.addEventListener('click', function(){
+        options.forEach(option => {
+            option.addEventListener('click', function() {
             //computer generated choice
             const computerNumber = Math.floor(Math.random() * 3) ; 
             const computerChoice = computerOptions[computerNumber] ;
@@ -37,7 +37,6 @@ const game = ()=> {
             setTimeout(() => {
             //This is where we call compare hands
             compareHands(this.textContent, computerChoice) ;
-
             //Update Images
             playerHand.src = `./assets/${this.textContent}.png` ;
             computerHand.src = `./assets/${computerChoice}.png` ;
@@ -47,7 +46,6 @@ const game = ()=> {
             computerHand.style.animation = "shakeComputer 2s ease" ;
             }) ;
         }) ;
-
     } ;
 
     const updateScore = () =>{
@@ -113,6 +111,6 @@ const game = ()=> {
     //call out all inner functions
     startGame() ; 
     playMatch() ;
+
 } ;
 
-game() ;
