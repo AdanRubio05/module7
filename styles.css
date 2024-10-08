@@ -45,6 +45,28 @@ section{
     height: 50px ;
     background: none ;
     border: none ;
-    color: rgb(255, 198, 92) ;
+    color: white ;
     font-size: 25px ;
+    background-color: rgb(255, 175, 28) ;
+    border-radius: 10px ;
+}
+
+.match{
+    position: absolute ;
+    top: 50% ;
+    left: 50% ;
+    transform: translate(-50%, -50%) ;
+}
+
+.winner{
+    color:rgb(3, 221, 236) ;
+    text-align: center ;
+    font-size: 50px ;
+}
+
+.hands,
+.options {
+    display: flex ;
+    justify-content: space-around ;
+    align-items: center ;
 }
