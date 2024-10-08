@@ -23,12 +23,13 @@ const game = ()=> {
 
         options.forEach((option)=>{
             option.addEventListener('click', function(){
-                console.log(this);
+                //computer generated choice
+            const computerNumber = Math.floor(Math.random() * 3) ; 
+            const computerChoice = computerOptions[computerNumber] ;
+            console.log(computerChoice) ;
             }) ;
         }) ;
 
-        const computerNumber = Math.floor(Math.random() * 3) ; 
-        computerOptions[computerNumber]
     }
 
 
