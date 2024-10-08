@@ -13,8 +13,28 @@ const game = ()=> {
             match.classList.add('fadeIn') ;
         }) ;
     } ; 
+    //Play Match
+    const playMatch = () => {
+        const options = document.querySelectorAll('.options button') ;
+        const playerHand = document.querySelector('.player-hand') ;
+        const computerHand = document.querySelector('.computer-hand') ;
+        //computer options
+        const computerOptions = ['rock', 'paper', 'scissors'] ;
+
+        options.forEach((option)=>{
+            option.addEventListener('click', function(){
+                console.log(this);
+            }) ;
+        }) ;
+
+        const computerNumber = Math.floor(Math.random() * 3) ; 
+        computerOptions[computerNumber]
+    }
+
+
     //call out all inner functions
     startGame() ; 
+    playMatch() ;
 } ;
 
 game() ;
