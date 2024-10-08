@@ -114,3 +114,5 @@ const game = ()=> {
 
 } ;
 
+game() ;
+
